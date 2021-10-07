@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <title>COVID-19 Tracker</title>
         <meta charset="utf-8">
@@ -11,7 +12,7 @@
             <span id="websiteTitle" title="COVID-19 Tracker">COVID-19 Tracker</span>
 
                 <span class="navItem" title="Turn on Dark mode">
-                    <img src="./icons/crescent-moon-svgrepo-com.svg">
+                    <img src="./icons/crescent-moon-svgrepo-com.svg" id="toggleDark">
                 </span>
                 <span class="navItem" title="Read the stats">
                     <img src="./icons/stats-svgrepo-com.svg">
@@ -27,18 +28,68 @@
             </span>
         </nav>
 
-        <section>
-        </section>
+        <main class="row">
 
-        <main>
-            <article>
+            <article class="column">
+                <h1>What <i>is</i> a <a href="https://coronavirusexplained.ukri.org/en/article/cad0003/" target="_blank">Coronavirus</a>?</h1>
+                <pre><strong>Coronaviruses</strong> are a family of viruses that cause illness in humans and animals. 
+Seven different types have been found in people, including those responsible for:
+the <a href="https://www.who.int/health-topics/severe-acute-respiratory-syndrome" target="_blank">SARS</a>, <a href="https://www.who.int/news-room/fact-sheets/detail/middle-east-respiratory-syndrome-coronavirus-(mers-cov)">MERS</a> and <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">COVID-19</a> epidemics.
+                </pre>
+                <h2>WHO recommendations for COVID-19</h2>
+
             </article>
 
-            <article>
+            <article class="column">
+                <h2>Common COVID-19 myths</h2>
+
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="./myths/supplements.png" style="width: 75%;">
+                        <div class="text">Supplements</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="./myths/garlic.png" style="width: 75%;">
+                        <div class="text">Garlic</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="./myths/masks.png" style="width: 75%;">
+                        <div class="text">Masks</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="./myths/humid.png" style="width: 75%;">
+                        <div class="text">Humid weather</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="./myths/sun.png" style="width: 75%;">
+                        <div class="text">Sun exposure</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="./myths/bacteria.png" style="width: 75%;">
+                        <div class="text">Bacteria vs. Viruses</div>
+                    </div>
+                </div>
+                <a class="previous" onclick="slideNext(-1)">&#10094;</a>
+                <a class="next" onclick="slideNext(1)">&#10095;</a>
+    
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </article>
+
         </main>
 
         <footer>
         </footer>
+
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
