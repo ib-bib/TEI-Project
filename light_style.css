@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap'); */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navBar {
+    width: 100vw;
+    height: 8vh;
+    background: rgb(59, 56, 56);
+    display: flex;
+}
+
+#websiteTitle {
+    color: aliceblue;
+    font-family: Train One;
+    font-size: xx-large;
+    margin-left: 3vw;
+    margin-bottom: 2vh;
+}
+
+#navItemList {
+    margin-left: 20vw;
+}
+
+.navItem img {
+    margin-top: 1vh;
+    margin-left: 3vw;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    width: 5vw;
+    height: 5vh;
+    border: 1px solid snow;
+    border-radius: 2vw;
+}
+
+.searchInput {
+    margin-left: 35vw;
+    margin-top: 2vh;
+    width: 135px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: url(./icons/search-svgrepo-com.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 3px;
+    transition-duration: .4s;
+}
+
+.searchInput:focus {
+    width: 85%;
+    margin-left: 18.35vw;
+ }
