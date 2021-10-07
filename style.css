@@ -21,22 +21,26 @@ body {
     margin-bottom: 2vh;
 }
 
-#navItemList {
-    margin-left: 20vw;
-}
-
 .navItem img {
+    display: block;
     margin-top: 1vh;
     margin-left: 3vw;
     padding-bottom: 1px;
     padding-top: 1px;
     width: 5vw;
     height: 5vh;
-    border: 1px solid snow;
+    border: 2px solid rgba(245, 245, 245, 0.473);
     border-radius: 2vw;
+    transition-duration: .2s;
+}
+
+.navItem img:hover {
+    border: 2px solid snow;
+    background-color: rgb(29, 48, 48);
 }
 
 .searchInput {
+    display: block;
     margin-left: 35vw;
     margin-top: 2vh;
     width: 135px;
@@ -48,7 +52,7 @@ body {
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: right 3px;
-/*     transition-duration: .4s; */
+    /* transition-duration: .4s; */
 }
 
 .searchInput:focus {
