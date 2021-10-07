@@ -37,6 +37,7 @@ body {
 .navItem img:hover {
     border: 2px solid snow;
     background-color: rgb(29, 48, 48);
+    cursor: pointer;
 }
 
 .searchInput {
