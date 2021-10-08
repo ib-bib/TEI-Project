@@ -1,92 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap'); */
-
-body {
-  margin: 0;
-  padding: 0;
+:root {
+    --bleqq: rgb(0, 0, 0);
+    --whyte: #fff;
 }
 
-.column {
-  float: left;
-  width: 46%;
+.navIcon:hover, .navIcon:focus {
+    border: 2px solid var(--bleqq);
+    padding: 2px;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.navBar {
-  width: 100vw;
-  height: 8vh;
-  background: rgb(59, 56, 56);
-  display: flex;
-}
-
-#websiteTitle {
-  color: aliceblue;
-  font-family: Train One;
-  font-size: 40px;
-  margin-left: 3vw;
-  margin-bottom: 2vh;
-}
-
-.navItem img {
-  display: block;
-  margin-top: 1vh;
-  margin-left: 3vw;
-  padding-bottom: 1px;
-  padding-top: 1px;
-  width: 5vw;
-  height: 5vh;
-  border: 2px solid rgba(245, 245, 245, 0.473);
-  border-radius: 2vw;
-  transition-duration: .4s;
-}
-
-.navItem img:hover, .navItem img:focus {
-  border: 2px solid snow;
-  background-color: rgb(29, 48, 48);
-  cursor: pointer;
-}
-
-#toggleDark {
-  opacity: 1;
-}
-
-a:focus {
-  text-decoration-line: underline;
-}
-
-.searchInput {
-  display: block;
-  border: 2px solid transparent;
-  margin-left: 35vw;
-  margin-top: 2vh;
-  width: 135px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-image: url(./icons/search-svgrepo-com.svg);
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: right 5px;
-    /* transition-duration: .4s; */
-}
-
-.searchInput:focus {
-  width: 85%;
-  margin-left: 18.35vw;
-  border: 2px solid rgb(180, 180, 255);
-}
-
-article {
-  margin-left: 3vw;
-}
-
-pre {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 21px;
+.navIcon.dark:hover, .navIcon.dark:focus {
+    border: 2px solid var(--whyte);
+    padding: 2px;
 }
