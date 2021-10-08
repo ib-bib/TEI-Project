@@ -4,6 +4,10 @@
     <head>
         <title>COVID-19 Tracker</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -12,13 +16,13 @@
             <span id="websiteTitle" title="COVID-19 Tracker">COVID-19 Tracker</span>
 
                 <span class="navItem" title="Turn on Dark mode">
-                    <img src="./icons/crescent-moon-svgrepo-com.svg" id="toggleDark">
+                    <img src="./icons/crescent-moon-svgrepo-com.svg" id="toggleDark" tabindex="0">
                 </span>
                 <span class="navItem" title="Read the stats">
-                    <img src="./icons/stats-svgrepo-com.svg">
+                    <img src="./icons/stats-svgrepo-com.svg" id="getStats" tabindex="0">
                 </span>
                 <span class="navItem" title="Turn on TTS">
-                    <img src="./icons/microphone-svgrepo-com.svg">
+                    <img src="./icons/microphone-svgrepo-com.svg" id="toggleTTS" tabindex="0">
                 </span>
 
             <span>
@@ -31,58 +35,50 @@
         <main class="row">
 
             <article class="column">
-                <h1>What <i>is</i> a <a href="https://coronavirusexplained.ukri.org/en/article/cad0003/" target="_blank">Coronavirus</a>?</h1>
+                <h2>What <i>is</i> a <a href="https://coronavirusexplained.ukri.org/en/article/cad0003/" target="_blank">Coronavirus</a>?</h2>
                 <pre><strong>Coronaviruses</strong> are a family of viruses that cause illness in humans and animals. 
 Seven different types have been found in people, including those responsible for:
 the <a href="https://www.who.int/health-topics/severe-acute-respiratory-syndrome" target="_blank">SARS</a>, <a href="https://www.who.int/news-room/fact-sheets/detail/middle-east-respiratory-syndrome-coronavirus-(mers-cov)">MERS</a> and <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">COVID-19</a> epidemics.
                 </pre>
-                <h2>WHO recommendations for COVID-19</h2>
-
+                <h2><a href="https://www.who.int/" target="_blank">W.H.O</a> COVID-19 Advice for the public</h2>
+                <ul>
+                    <li>Get vaccinated as soon as it’s your turn and follow local guidance on vaccination.</li>
+                    <li>Keep physical distance of at least 1 metre from others, even if they don’t appear to be sick. Avoid crowds and close contact.</li>
+                    <li>Wear a properly fitted mask when physical distancing is not possible and in poorly ventilated settings.</li>
+                    <li>Clean your hands frequently with alcohol-based hand rub or soap and water.</li>
+                    <li>Cover your mouth and nose with a bent elbow or tissue when you cough or sneeze. Dispose of used tissues immediately and clean hands regularly.</li>
+                    <li>If you develop symptoms or test positive for COVID-19, self-isolate until you recover.</li>
+                </ul>
             </article>
 
             <article class="column">
                 <h2>Common COVID-19 myths</h2>
-
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 6</div>
-                        <img src="./myths/supplements.png" style="width: 75%;">
-                        <div class="text">Supplements</div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./myths/garlic.png" class="d-block w-100" alt="garlic">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./myths/supplements.png" class="d-block w-100" alt="supplements">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./myths/sun.png" class="d-block w-100" alt="sun exposure">
+                      </div>
                     </div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 6</div>
-                        <img src="./myths/garlic.png" style="width: 75%;">
-                        <div class="text">Garlic</div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 6</div>
-                        <img src="./myths/masks.png" style="width: 75%;">
-                        <div class="text">Masks</div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 6</div>
-                        <img src="./myths/humid.png" style="width: 75%;">
-                        <div class="text">Humid weather</div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 6</div>
-                        <img src="./myths/sun.png" style="width: 75%;">
-                        <div class="text">Sun exposure</div>
-                    </div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">6 / 6</div>
-                        <img src="./myths/bacteria.png" style="width: 75%;">
-                        <div class="text">Bacteria vs. Viruses</div>
-                    </div>
-                </div>
-                <a class="previous" onclick="slideNext(-1)">&#10094;</a>
-                <a class="next" onclick="slideNext(1)">&#10095;</a>
-    
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
             </article>
 
         </main>
