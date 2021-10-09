@@ -12,3 +12,7 @@
     border: 2px solid var(--whyte);
     padding: 2px;
 }
+
+a:focus {
+    text-decoration: underline;
+}
