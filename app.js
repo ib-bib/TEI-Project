@@ -60,17 +60,10 @@ let enDark = () => {
         navIcons[i].classList.toggle("dark");
     }
 
-    darkToggle.style.transition = "transform .7s";
     if (darkToggle.getAttribute("src") === "./icons/moon.svg") {
-        darkToggle.style.border = "2px solid white";
-        darkToggle.style.transform = "rotate(180deg)";
         darkToggle.src = "./icons/sun.svg";
-        darkToggle.style.transform = "rotate(180deg)";
     } else {
-        darkToggle.style.border = "2px solid black";
-        darkToggle.style.transform = "rotate(180deg)";
         darkToggle.src = "./icons/moon.svg";
-        darkToggle.style.transform = "rotate(360deg)";
     }
     
     if (isHome()) {
@@ -122,6 +115,14 @@ let enDark = () => {
         }
     }
 
+    if (footer.classList.contains("border-light")) {
+        footer.classList.remove("border-light");
+        footer.classList.add("border-dark");
+    } else {
+        footer.classList.remove("border-dark");
+        footer.classList.add("border-light")
+    }
+
     if (document.body.className === "bootstrap") {
         document.body.className = "bootstrap-dark";
         setCookie("theme", "dark", 1);
@@ -130,17 +131,30 @@ let enDark = () => {
         deleteCookie();
     }
 }
+// This was necessary to only apply the transformations when the button is clicked
+const combinedFunction = () => {
+    darkToggle.style.transition = "transform .8s";
+    if (darkToggle.getAttribute("src") === "./icons/moon.svg") {
+        darkToggle.style.border = "2px solid white";
+        darkToggle.style.transform = "rotate(180deg)";
+    } else {
+        darkToggle.style.border = "2px solid black";
+        darkToggle.style.transform = "rotate(360deg)";
+    }
+    enDark();
+}
 // The two different triggers for dark mode
 if (enabledDarkModeCookie()) {
     enDark();
 }
-darkToggle.addEventListener("click", enDark);// click event listener to enable dark theme
+darkToggle.addEventListener("click", combinedFunction);// click event listener to enable dark theme
 
 // Below section is to allow mouse click functionality via keyboard navigation as an alternative
 darkToggle.addEventListener("keyup", ev => {
     if (ev.key === " " || ev.key === "Enter") {
         ev.preventDefault();
         darkToggle.click();
+        darkToggle.mous
     }
 });
 
