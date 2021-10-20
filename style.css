@@ -1,17 +1,18 @@
-:root {
-    --bleqq: rgb(0, 0, 0);
-    --whyte: #fff;
-}
 
-.navIcon:hover, .navIcon:focus {
-    border: 2px solid var(--bleqq);
+/* .navIcon:hover, .navIcon:focus {
+    border: 2px solid black;
     padding: 2px;
 }
 
 .navIcon.dark:hover, .navIcon.dark:focus {
-    border: 2px solid var(--whyte);
+    border: 2px solid white;
     padding: 2px;
-}
+} 
+
+This is commented out due to the absence of BLUR functionality in css
+The focus works well unless the target is actually clicked, in which case the css is applied permanently
+
+*/
 
 a:focus {
     text-decoration: underline;
