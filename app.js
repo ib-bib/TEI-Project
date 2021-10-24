@@ -139,7 +139,7 @@ const combinedFunction = () => {
         darkToggle.style.transform = "rotate(180deg)";
     } else {
         darkToggle.style.border = "2px solid black";
-        darkToggle.style.transform = "rotate(-180deg)";
+        darkToggle.style.transform = "rotate(360deg)";
     }
     enDark();
 }
