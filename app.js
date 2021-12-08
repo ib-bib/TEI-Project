@@ -1,8 +1,7 @@
 let isHome = () => {
     return document.head.id === "indexPage";
 }
-// console.log(isHome());
-// this pseudo-variable function will allows to know whether we are home or not
+// this pseudo-variable function will allow us to know whether we are home or not
 // allows us to determine which button functionality to enable, stats or Home
 
 const darkToggle = document.getElementById("toggleDark");
@@ -10,11 +9,13 @@ const statsBtn = document.getElementById("stats");
 const ttsBtn = document.getElementById("ttsBtn");
 const searchBtn = document.getElementById("searchBtn");
 const homeBtn = document.getElementById("home");
+const contactBtn = document.getElementById("contact");
 //Navbar buttons
 
 const icons8Logo = document.getElementById("icons8Logo");
 let gitHubLogo = document.getElementsByClassName("gitHubLogo");
 const wikiLogo = document.getElementById("wikiLogo");
+const rapidAPIlogo = document.getElementById("rapidAPI");
 const footer = document.getElementById("footerSection");
 // Footer content
 
@@ -88,6 +89,12 @@ let enDark = () => {
         ttsBtn.src = "./icons/mic-dark.svg";
     }
 
+    if (contactBtn.getAttribute("src") === "./icons/icons8-contact-us-100(1).png") {
+        contactBtn.src = "./icons/icons8-contact-us-Light.png";
+    } else {
+        contactBtn.src = "./icons/icons8-contact-us-100(1).png";
+    }
+
     if (searchBtn.getAttribute("src") === "./icons/neoDarkSearch.svg") {
         searchBtn.src = "./icons/neoLightSearch.svg";
     } else {
@@ -98,6 +105,12 @@ let enDark = () => {
         icons8Logo.src = "./icons/icons8-icons8-light.svg";
     } else {
         icons8Logo.src = "./icons/icons8-icons8.svg";
+    }
+
+    if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
+        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
+    } else {
+        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
     }
 
     if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
@@ -180,6 +193,13 @@ searchBtn.addEventListener("keyup", ev => {
         searchBtn.click();
     }
 });
+
+contactBtn.addEventListener("keyup", ev => {
+    if (ev.key === " " || ev.key === "Enter") {
+        ev.preventDefault();
+        searchBtn.click();
+    }
+});
 // End of key listeners section
 
 // Below section is for hover/focus functionality, due to css causing issues after click
@@ -248,3 +268,19 @@ ttsBtn.onmouseleave = () => {
     ttsBtn.style.padding = "0px";
 }
 // TTS button
+
+contactBtn.onmouseover = () => {
+    if (contactBtn.classList.toString() === "navIcon") {
+        contactBtn.style.border = "2px solid black";
+        contactBtn.style.padding = "2px";
+    } else {
+        contactBtn.style.border = "2px solid white";
+        contactBtn.style.padding = "2px";
+    }
+}
+
+contactBtn.onmouseleave = () => {
+    contactBtn.style.border = "0px solid transparent";
+    contactBtn.style.padding = "0px";
+}
+// Contact us button
