@@ -11,7 +11,7 @@
     </head>
 
     <body class="bootstrap">
-        <nav class="navbar navbar-expand-lg navbar-themed sticky-top" aria-hidden="false">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false">
             <a class="navbar-brand" href="#" tabindex="-1"><h1>COVID-19 Informer</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
                 <li class="nav-item active">
                     <a class="navbar-brand" href="#" tabindex="-1">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="./icons/moon.svg" style="width: 50px;height: 50px;" class="navIcon" tabindex="0" id="toggleDark"> 
+                        <img src="./icons/moon.svg" style="width: 50px;height: 50px;" class="navIcon" tabindex="0" id="toggleDark" alt="Toggle dark mode"> 
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -35,9 +35,15 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="#" tabindex="-1">
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <img src="./icons/mic-dark.svg" style="width: 50px;height: 50px;" class="navIcon" tabindex="0" id="ttsBtn">
+                      <img src="./icons/mic-dark.svg" style="width: 50px;height: 50px;" class="navIcon" tabindex="0" id="ttsBtn" alt="Text To Speech">
                     </a>
-                  </li>
+                </li>
+                <li>
+                  <a class="navbar-brand" href="#" tabindex="-1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="./icons/icons8-contact-us-100(1).png" style="width: 50px;height: 50px;" class="navIcon" tabindex="0" id="contact" alt="Contact us">
+                  </a>
+              </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Countries..." aria-label="Search">
@@ -136,7 +142,6 @@
                     If you develop symptoms or test positive for COVID-19, self-isolate until you recover.
                   </li>
                 </ul>
-                <!-- <img style="margin-left: 200px" src="./icons/World Health Organization logo.svg"> -->
               </section>
 
               <section class="col">
@@ -154,7 +159,7 @@
             <h5 class="col-sm">
               <p>SVGs & Icons from:</p> 
               <p>
-                <a href="https://icons8.com" target="_blank" title="Icons8">
+                <a href="https://icons8.com/" target="_blank" title="Icons8">
                   <img src="./icons/icons8-icons8.svg" alt="Icons8" id="icons8Logo">
                 </a>
               </p>
@@ -202,7 +207,7 @@
               </p>
               <p>
                 <a href="https://rapidapi.com/" target="_blank" title="Rapid API">
-                  <img src="https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg" alt="Rapid API">
+                  <img id="rapidAPI" src="https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg" alt="Rapid API">
                 </a>
               </p>
             </h5>
