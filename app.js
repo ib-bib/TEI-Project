@@ -4,12 +4,16 @@ let isHome = () => {
 // this pseudo-variable function will allow us to know whether we are home or not
 // allows us to determine which button functionality to enable, stats or Home
 
+let onContactPage = () => {
+    return document.head.id === "contactUsPage";
+}
+
 const darkToggle = document.getElementById("toggleDark");
-const statsBtn = document.getElementById("stats");
+let statsBtn;
 const ttsBtn = document.getElementById("ttsBtn");
 const searchBtn = document.getElementById("searchBtn");
-const homeBtn = document.getElementById("home");
-const contactBtn = document.getElementById("contact");
+let homeBtn;
+let contactBtn;
 //Navbar buttons
 
 const icons8Logo = document.getElementById("icons8Logo");
@@ -21,6 +25,19 @@ const footer = document.getElementById("footerSection");
 
 let navIcons = document.getElementsByClassName("navIcon");
 // this array will be used to apply a different border color depending on the theme
+
+if (isHome()) {
+    statsBtn = document.getElementById("stats");
+    contactBtn = document.getElementById("contact");
+}
+if (onContactPage()) {
+    homeBtn = document.getElementById("home");
+    statsBtn = document.getElementById("stats");
+}
+if (!isHome() && !onContactPage()) {
+    homeBtn = document.getElementById("home");
+    contactBtn = document.getElementById("contact");
+}
 
 // Below section is for cookie handling
 const setCookie = (cName, cValue, cExp) => {
@@ -67,7 +84,7 @@ let enDark = () => {
         darkToggle.src = "./icons/moon.svg";
     }
     
-    if (isHome()) {
+    if (isHome() || onContactPage()) {
         if (statsBtn.getAttribute("src") === "./icons/stats-dark.svg") {
             statsBtn.src = "./icons/stats-light.svg";
         } else {
@@ -89,10 +106,12 @@ let enDark = () => {
         ttsBtn.src = "./icons/mic-dark.svg";
     }
 
-    if (contactBtn.getAttribute("src") === "./icons/icons8-contact-us-100(1).png") {
-        contactBtn.src = "./icons/icons8-contact-us-Light.png";
-    } else {
-        contactBtn.src = "./icons/icons8-contact-us-100(1).png";
+    if (!onContactPage()) {
+        if (contactBtn.getAttribute("src") === "./icons/icons8-contact-us-100(1).png") {
+            contactBtn.src = "./icons/icons8-contact-us-Light.png";
+        } else {
+            contactBtn.src = "./icons/icons8-contact-us-100(1).png";
+        }
     }
 
     if (searchBtn.getAttribute("src") === "./icons/neoDarkSearch.svg") {
@@ -101,22 +120,24 @@ let enDark = () => {
         searchBtn.src = "./icons/neoDarkSearch.svg";
     }
 
-    if (icons8Logo.getAttribute("src") === "./icons/icons8-icons8.svg") {
-        icons8Logo.src = "./icons/icons8-icons8-light.svg";
-    } else {
-        icons8Logo.src = "./icons/icons8-icons8.svg";
-    }
-
-    if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
-        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
-    } else {
-        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
-    }
-
-    if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
-        wikiLogo.src = "./icons/icons8-wikipedia-light.svg";
-    } else {
-        wikiLogo.src = "./icons/icons8-wikipedia.svg";
+    if (!onContactPage()) {
+        if (icons8Logo.getAttribute("src") === "./icons/icons8-icons8.svg") {
+            icons8Logo.src = "./icons/icons8-icons8-light.svg";
+        } else {
+            icons8Logo.src = "./icons/icons8-icons8.svg";
+        }
+    
+        if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
+            rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
+        } else {
+            rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
+        }
+    
+        if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
+            wikiLogo.src = "./icons/icons8-wikipedia-light.svg";
+        } else {
+            wikiLogo.src = "./icons/icons8-wikipedia.svg";
+        }
     }
 
     for (let i = 0; i < gitHubLogo.length; i++) {
@@ -128,12 +149,14 @@ let enDark = () => {
         }
     }
 
-    if (footer.classList.contains("border-light")) {
-        footer.classList.remove("border-light");
-        footer.classList.add("border-dark");
-    } else {
-        footer.classList.remove("border-dark");
-        footer.classList.add("border-light")
+    if (!onContactPage()) {
+        if (footer.classList.contains("border-light")) {
+            footer.classList.remove("border-light");
+            footer.classList.add("border-dark");
+        } else {
+            footer.classList.remove("border-dark");
+            footer.classList.add("border-light")
+        }
     }
 
     if (document.body.className === "bootstrap") {
@@ -171,7 +194,7 @@ darkToggle.addEventListener("keyup", ev => {
     }
 });
 
-if (isHome()) {
+if (isHome() || onContactPage()) {
     statsBtn.addEventListener("keyup", ev => {
         if (ev.key === " " || ev.key === "Enter") {
             ev.preventDefault();
@@ -194,12 +217,14 @@ searchBtn.addEventListener("keyup", ev => {
     }
 });
 
-contactBtn.addEventListener("keyup", ev => {
-    if (ev.key === " " || ev.key === "Enter") {
-        ev.preventDefault();
-        searchBtn.click();
-    }
-});
+if (!onContactPage()) {
+    contactBtn.addEventListener("keyup", ev => {
+        if (ev.key === " " || ev.key === "Enter") {
+            ev.preventDefault();
+            searchBtn.click();
+        }
+    });
+}
 // End of key listeners section
 
 // Below section is for hover/focus functionality, due to css causing issues after click
@@ -219,7 +244,7 @@ darkToggle.onmouseleave = () => {
 }
 // Dark theme button
 
-if (isHome()) {
+if (isHome() || onContactPage()) {
     statsBtn.onmouseover = () => {
         if (statsBtn.classList.toString() === "navIcon") {
             statsBtn.style.border = "2px solid black";
@@ -269,18 +294,22 @@ ttsBtn.onmouseleave = () => {
 }
 // TTS button
 
-contactBtn.onmouseover = () => {
-    if (contactBtn.classList.toString() === "navIcon") {
-        contactBtn.style.border = "2px solid black";
-        contactBtn.style.padding = "2px";
-    } else {
-        contactBtn.style.border = "2px solid white";
-        contactBtn.style.padding = "2px";
+if (!onContactPage()) {
+    contactBtn.onmouseover = () => {
+        if (contactBtn.classList.toString() === "navIcon") {
+            contactBtn.style.border = "2px solid black";
+            contactBtn.style.padding = "2px";
+        } else {
+            contactBtn.style.border = "2px solid white";
+            contactBtn.style.padding = "2px";
+        }
     }
 }
 
-contactBtn.onmouseleave = () => {
-    contactBtn.style.border = "0px solid transparent";
-    contactBtn.style.padding = "0px";
+if (!onContactPage()) {
+    contactBtn.onmouseleave = () => {
+        contactBtn.style.border = "0px solid transparent";
+        contactBtn.style.padding = "0px";
+    }
 }
 // Contact us button
