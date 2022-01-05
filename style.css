@@ -17,3 +17,7 @@ The focus works well unless the target is actually clicked, in which case the cs
 a:focus {
     text-decoration: underline;
 }
+
+.sorting {
+    cursor: pointer;
+}
