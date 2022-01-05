@@ -1,17 +1,7 @@
-let isHome = () => {
-    return document.head.id === "indexPage";
-}
-// this pseudo-variable function will allow us to know whether we are home or not
-// allows us to determine which button functionality to enable, stats or Home
-
-let onContactPage = () => {
-    return document.head.id === "contactUsPage";
-}
-
 const darkToggle = document.getElementById("toggleDark");
 let statsBtn;
 const ttsBtn = document.getElementById("ttsBtn");
-const searchBtn = document.getElementById("searchBtn");
+let searchBtn;
 let homeBtn;
 let contactBtn;
 //Navbar buttons
@@ -26,6 +16,19 @@ const footer = document.getElementById("footerSection");
 let navIcons = document.getElementsByClassName("navIcon");
 // this array will be used to apply a different border color depending on the theme
 
+let isHome = () => {
+    return document.head.id === "indexPage";
+}
+let onContactPage = () => {
+    return document.head.id === "contactUsPage";
+}
+let onSubmitPage = () => {
+    return document.head.id === "submit";
+}
+let onStatsPage = () => {
+    return document.head.id === "statsPage";
+}
+
 if (isHome()) {
     statsBtn = document.getElementById("stats");
     contactBtn = document.getElementById("contact");
@@ -34,9 +37,10 @@ if (onContactPage()) {
     homeBtn = document.getElementById("home");
     statsBtn = document.getElementById("stats");
 }
-if (!isHome() && !onContactPage()) {
+if (onStatsPage()) {
     homeBtn = document.getElementById("home");
     contactBtn = document.getElementById("contact");
+    searchBtn = document.getElementById("searchBtn");
 }
 
 // Below section is for cookie handling
@@ -78,12 +82,36 @@ let enDark = () => {
         navIcons[i].classList.toggle("dark");
     }
 
+    if (onStatsPage()) {
+        const sortIcons = document.getElementsByClassName("sorting");
+        for (let i = 0; i < sortIcons.length; i++) {
+            if (sortIcons[i].getAttribute("src") === "./icons/icons8-sort-32.png") {
+                sortIcons[i].src = "./icons/icons8-sort-32-white.png";
+            } 
+            else if (sortIcons[i].getAttribute("src") === "./icons/sort-up-32.png") {
+                sortIcons[i].src = "./icons/sort-up-32-white.png";
+            }
+            else if (sortIcons[i].getAttribute("src") === "./icons/icons8-sort-down-32.png") {
+                sortIcons[i].src = "./icons/icons8-sort-down-32-white.png";
+            }
+            else if (sortIcons[i].getAttribute("src") === "./icons/icons8-sort-down-32-white.png") {
+                sortIcons[i].src = "./icons/icons8-sort-down-32.png";
+            }
+            else if (sortIcons[i].getAttribute("src") === "./icons/sort-up-32-white.png") {
+                sortIcons[i].src = "./icons/sort-up-32.png";
+            }
+            else {
+                sortIcons[i].src = "./icons/icons8-sort-32.png";
+            }
+        }
+    }
+
     if (darkToggle.getAttribute("src") === "./icons/moon.svg") {
         darkToggle.src = "./icons/sun.svg";
     } else {
         darkToggle.src = "./icons/moon.svg";
     }
-    
+
     if (isHome() || onContactPage()) {
         if (statsBtn.getAttribute("src") === "./icons/stats-dark.svg") {
             statsBtn.src = "./icons/stats-light.svg";
@@ -91,22 +119,22 @@ let enDark = () => {
             statsBtn.src = "./icons/stats-dark.svg";
         }
     }
-    
-    if (!isHome()) {
+
+    if (onSubmitPage() || onStatsPage() || onContactPage()) {
         if (homeBtn.getAttribute("src") === "./icons/home-dark.svg") {
             homeBtn.src = "./icons/home-light.svg";
         } else {
             homeBtn.src = "./icons/home-dark.svg";
         }
     }
-    
+
     if (ttsBtn.getAttribute("src") === "./icons/mic-dark.svg") {
         ttsBtn.src = "./icons/mic-light.svg";
     } else {
         ttsBtn.src = "./icons/mic-dark.svg";
     }
 
-    if (!onContactPage()) {
+    if (isHome() || onStatsPage()) {
         if (contactBtn.getAttribute("src") === "./icons/icons8-contact-us-100(1).png") {
             contactBtn.src = "./icons/icons8-contact-us-Light.png";
         } else {
@@ -114,30 +142,30 @@ let enDark = () => {
         }
     }
 
-    if (searchBtn.getAttribute("src") === "./icons/neoDarkSearch.svg") {
-        searchBtn.src = "./icons/neoLightSearch.svg";
-    } else {
-        searchBtn.src = "./icons/neoDarkSearch.svg";
+    if (onStatsPage()) {
+        if (searchBtn.getAttribute("src") === "./icons/neoDarkSearch.svg") {
+            searchBtn.src = "./icons/neoLightSearch.svg";
+        } else {
+            searchBtn.src = "./icons/neoDarkSearch.svg";
+        }
     }
 
-    if (!onContactPage()) {
-        if (icons8Logo.getAttribute("src") === "./icons/icons8-icons8.svg") {
-            icons8Logo.src = "./icons/icons8-icons8-light.svg";
-        } else {
-            icons8Logo.src = "./icons/icons8-icons8.svg";
-        }
-    
-        if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
-            rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
-        } else {
-            rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
-        }
-    
-        if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
-            wikiLogo.src = "./icons/icons8-wikipedia-light.svg";
-        } else {
-            wikiLogo.src = "./icons/icons8-wikipedia.svg";
-        }
+    if (icons8Logo.getAttribute("src") === "./icons/icons8-icons8.svg") {
+        icons8Logo.src = "./icons/icons8-icons8-light.svg";
+    } else {
+        icons8Logo.src = "./icons/icons8-icons8.svg";
+    }
+
+    if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
+        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
+    } else {
+        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
+    }
+
+    if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
+        wikiLogo.src = "./icons/icons8-wikipedia-light.svg";
+    } else {
+        wikiLogo.src = "./icons/icons8-wikipedia.svg";
     }
 
     for (let i = 0; i < gitHubLogo.length; i++) {
@@ -149,14 +177,12 @@ let enDark = () => {
         }
     }
 
-    if (!onContactPage()) {
-        if (footer.classList.contains("border-light")) {
-            footer.classList.remove("border-light");
-            footer.classList.add("border-dark");
-        } else {
-            footer.classList.remove("border-dark");
-            footer.classList.add("border-light")
-        }
+    if (footer.classList.contains("border-light")) {
+        footer.classList.remove("border-light");
+        footer.classList.add("border-dark");
+    } else {
+        footer.classList.remove("border-dark");
+        footer.classList.add("border-light")
     }
 
     if (document.body.className === "bootstrap") {
@@ -167,7 +193,8 @@ let enDark = () => {
         deleteCookie();
     }
 }
-// This was necessary to only apply the transformations when the button is clicked
+
+// This is necessary to only apply the transformations when the button is clicked
 const combinedFunction = () => {
     darkToggle.style.transition = "transform .8s";
     if (darkToggle.getAttribute("src") === "./icons/moon.svg") {
@@ -179,7 +206,7 @@ const combinedFunction = () => {
     }
     enDark();
 }
-// The two different triggers for dark mode
+// The two different triggers for dark mode (above and below this line)
 if (enabledDarkModeCookie()) {
     enDark();
 }
@@ -210,25 +237,27 @@ ttsBtn.addEventListener("keyup", ev => {
     }
 });
 
-searchBtn.addEventListener("keyup", ev => {
-    if (ev.key === " " || ev.key === "Enter") {
-        ev.preventDefault();
-        searchBtn.click();
-    }
-});
-
-if (!onContactPage()) {
-    contactBtn.addEventListener("keyup", ev => {
+if (onStatsPage()) {
+    searchBtn.addEventListener("keyup", ev => {
         if (ev.key === " " || ev.key === "Enter") {
             ev.preventDefault();
             searchBtn.click();
         }
     });
 }
+
+if (onStatsPage() || isHome()) {
+    contactBtn.addEventListener("keyup", ev => {
+        if (ev.key === " " || ev.key === "Enter") {
+            ev.preventDefault();
+            contactBtn.click();
+        }
+    });
+}
 // End of key listeners section
 
 // Below section is for hover/focus functionality, due to css causing issues after click
-darkToggle.onmouseover = () => {
+darkToggle.onfocus = darkToggle.onmouseover = () => {
     if (darkToggle.classList.toString() === "navIcon") {
         darkToggle.style.border = "2px solid black";
         darkToggle.style.padding = "2px";
@@ -238,14 +267,14 @@ darkToggle.onmouseover = () => {
     }
 }
 
-darkToggle.onmouseleave = () => {
+darkToggle.onblur = darkToggle.onmouseleave = () => {
     darkToggle.style.border = "0px solid transparent";
     darkToggle.style.padding = "0px";
 }
 // Dark theme button
 
 if (isHome() || onContactPage()) {
-    statsBtn.onmouseover = () => {
+    statsBtn.onfocus = statsBtn.onmouseover = () => {
         if (statsBtn.classList.toString() === "navIcon") {
             statsBtn.style.border = "2px solid black";
             statsBtn.style.padding = "2px";
@@ -254,15 +283,15 @@ if (isHome() || onContactPage()) {
             statsBtn.style.padding = "2px";
         }
     }
-    statsBtn.onmouseleave = () => {
+    statsBtn.onblur = statsBtn.onmouseleave = () => {
         statsBtn.style.border = "0px solid transparent";
         statsBtn.style.padding = "0px";
     }
 }
 // Depending on the page, the button may or may not actually be there at all
 // If a button is not present, we get into trouble with a null pointer
-if (!isHome()) {
-    homeBtn.onmouseover = () => {
+if (onContactPage() || onStatsPage() || onSubmitPage()) {
+    homeBtn.onfocus = homeBtn.onmouseover = () => {
         if (homeBtn.classList.toString() === "navIcon") {
             homeBtn.style.border = "2px solid black";
             homeBtn.style.padding = "2px";
@@ -271,14 +300,14 @@ if (!isHome()) {
             homeBtn.style.padding = "2px";
         }
     }
-    homeBtn.onmouseleave = () => {
+    homeBtn.onblur = homeBtn.onmouseleave = () => {
         homeBtn.style.border = "0px solid transparent";
         homeBtn.style.padding = "0px";
     }
 }
 // Stats button and Home button
 
-ttsBtn.onmouseover = () => {
+ttsBtn.onfocus = ttsBtn.onmouseover = () => {
     if (ttsBtn.classList.toString() === "navIcon") {
         ttsBtn.style.border = "2px solid black";
         ttsBtn.style.padding = "2px";
@@ -287,15 +316,14 @@ ttsBtn.onmouseover = () => {
         ttsBtn.style.padding = "2px";
     }
 }
-
-ttsBtn.onmouseleave = () => {
+ttsBtn.onblur = ttsBtn.onmouseleave = () => {
     ttsBtn.style.border = "0px solid transparent";
     ttsBtn.style.padding = "0px";
 }
 // TTS button
 
-if (!onContactPage()) {
-    contactBtn.onmouseover = () => {
+if (isHome() || onStatsPage()) {
+    contactBtn.onfocus = contactBtn.onmouseover = () => {
         if (contactBtn.classList.toString() === "navIcon") {
             contactBtn.style.border = "2px solid black";
             contactBtn.style.padding = "2px";
@@ -304,12 +332,102 @@ if (!onContactPage()) {
             contactBtn.style.padding = "2px";
         }
     }
-}
-
-if (!onContactPage()) {
-    contactBtn.onmouseleave = () => {
+    contactBtn.onblur = contactBtn.onmouseleave = () => {
         contactBtn.style.border = "0px solid transparent";
         contactBtn.style.padding = "0px";
     }
 }
 // Contact us button
+
+const sortTable = (n, numeric) => {
+    let rows, i, cellA, cellB, shouldSwitch;
+    let switchcount = 0;
+    let table = document.getElementById("statsTable");
+    let switching = true;
+    let direction = "ascending";
+    let dirMarker = "";
+
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            cellA = rows[i].getElementsByTagName("TD")[n];
+            if (rows[i + 1].getElementsByTagName("TD")[n] !== null && rows[i + 1].getElementsByTagName("TD")[n] !== undefined) {
+                cellB = rows[i + 1].getElementsByTagName("TD")[n];
+            }
+            if (direction == "ascending") {
+                dirMarker = "ascending";
+                let x, y;
+                if (numeric) {
+                    x = Number(cellA.innerHTML);
+                    y = Number(cellB.innerHTML);
+                } else {
+                    x = cellA.innerHTML.toLowerCase();
+                    y = cellB.innerHTML.toLowerCase();
+                }
+                if (x > y) {
+                    shouldSwitch = true;
+                    break;
+                }
+            } else if (direction == "descending") {
+                let x, y;
+                if (numeric) {
+                    x = Number(cellA.innerHTML);
+                    y = Number(cellB.innerHTML);
+                } else {
+                    x = cellA.innerHTML.toLowerCase();
+                    y = cellB.innerHTML.toLowerCase();
+                }
+                if (x < y) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount++;    
+        } else {
+            if (switchcount == 0 && direction == "ascending") {
+                direction = "descending";
+                dirMarker = "descending";
+                switching = true;
+            }
+        }
+    }
+    toggleSortIcon(n, dirMarker);
+}// end of sortTable(n, b) function
+
+const toggleSortIcon = (index, direction) => {
+    const sortIcons = document.getElementsByClassName("sorting");
+    for (let i = 0; i < sortIcons.length; i++) {
+        if (i !== index) {
+            if (document.body.className == "bootstrap") {
+                sortIcons[i].src = "./icons/icons8-sort-32.png";
+            } else {
+                sortIcons[i].src = "./icons/icons8-sort-32-white.png";
+            }
+        }
+    }
+
+    if (direction === "ascending") {
+        if (document.body.className == "bootstrap") {
+            sortIcons[index].src = "./icons/sort-up-32.png";
+            return;
+        } else {
+            sortIcons[index].src = "./icons/sort-up-32-white.png";
+            return;
+        }
+    } else {
+        if (document.body.className == "bootstrap") {
+            sortIcons[index].src = "./icons/icons8-sort-down-32.png";
+            return;
+        } else {
+            sortIcons[index].src = "./icons/icons8-sort-down-32-white.png";
+            return;
+        }
+    }
+
+}// end of toggleSortIcon(i, dir)
