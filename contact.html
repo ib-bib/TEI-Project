@@ -10,6 +10,7 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css" />
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="icon" href="./icons/COVID-19icon.png">
 </head>
 
@@ -33,7 +34,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="./statsPage.html" tabindex="-1">
+          <a class="navbar-brand" href="./statistics.html" tabindex="-1">
             <img src="./icons/stats-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon" tabindex="0" id="stats"
               alt="get COVID stats">
           </a>
@@ -55,11 +56,17 @@
   </nav>
 
   <h1 style="text-align: center">Shoot us a message</h1>
-
+  
   <div class="container py-4" style="width: 50vw">
 
+    <div class="alert alert-dismissible fade show" role="alert" hidden>
+      <label></label>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <!-- Bootstrap 5 starter form -->
-    <form id="contactForm" action="./mail.php" method="post">
+    <form id="contactForm" name="contactForm" action="#">
 
       <!-- Name input -->
       <div class="mb-3">
@@ -70,7 +77,7 @@
       <!-- Email address input -->
       <div class="mb-3">
         <label class="form-label" for="emailAddress">Email Address</label>
-        <input class="form-control" name="emailAddress" id="emailAddress" type="email" placeholder="Email Address" />
+        <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" />
       </div>
 
       <!-- Message input -->
@@ -151,7 +158,25 @@
           
         </footer>
 
-
+        <script type="text/javascript">
+          contactForm.onsubmit = async (e) => {
+            e.preventDefault();
+            let data = {name: contactForm.name.value, email: contactForm.email.value, message: contactForm.message.value};
+            let result = await (() => axios.post('/mail/send.php', data).then(response => response.data))();
+            let alertdiv = document.querySelector('.alert');
+            if (result) {
+              if(alertdiv.classList.contains('alert-danger')) { alertdiv.classList.remove('alert-danger') };
+              alertdiv.classList.add('alert-success');
+              alertdiv.textContent = "Email sent successfully";
+            } else {
+              if(alertdiv.classList.contains('alert-success')) { alertdiv.classList.remove('alert-success') };
+              alertdiv.classList.add('alert-danger');
+              alertdiv.textContent = "Email was not send!!";
+            }
+            alertdiv.hidden = false;
+            setTimeout(() => {alertdiv.hidden = true}, 3000);
+          }
+        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
