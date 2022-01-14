@@ -16,7 +16,7 @@
 
 <body class="bootstrap">
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false" id="daNavBar">
     <a class="navbar-brand" href="./index.html" tabindex="-1">
       <img src="./icons/COVID-19icon.png" id="daRona">
     </a>
@@ -96,8 +96,7 @@
     </form>
   </div>
 
-
-  <footer aria-hidden="true" class="container">
+  <footer aria-hidden="true" class="container" id="daFoot">
     <br>
     <section class="row border-top border-dark" id="footerSection">
 
@@ -190,7 +189,7 @@
               Polite reader (no interruptions)
             </label>
             <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1">
+              <input name="check" type="checkbox" tabindex="-1" id="politeToggle">
               <span class="slider round"></span>
             </label>
           </div>
@@ -200,7 +199,7 @@
             </label>
 
             <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1">
+              <input name="check" type="checkbox" tabindex="-1" id="readAllToggle">
               <span class="slider round"></span>
             </label>
           </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head id="indexPage">
-  <title>COVID-19 Tracker</title>
+  <title>COVID-19 Informer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet"
@@ -14,7 +14,7 @@
 </head>
 
 <body class="bootstrap">
-  <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false" id="daNavBar" aria-live="off">
     <a class="navbar-brand" href="./index.html" tabindex="-1">
       <img src="./icons/COVID-19icon.png" id="daRona">
     </a>
@@ -57,7 +57,7 @@
 
   <main class="container">
     <article class="row">
-      <section class="col" aria-hidden="true">
+      <section class="col" aria-hidden="true" id="COVIDinfoSection" aria-live="off">
         <h2>What <em>is </em>a <a href="https://coronavirusexplained.ukri.org/en/article/cad0003/"
             target="_blank">Coronavirus</a>?</h2>
         Coronaviruses (CoVs) are a family of viruses that cause respiratory and intestinal illnesses in humans and
@@ -162,7 +162,7 @@
     </article>
   </main>
 
-  <footer aria-hidden="true" class="container">
+  <footer aria-hidden="true" class="container" id="daFoot" aria-live="off">
     <br>
     <section class="row border-top border-dark" id="footerSection">
 
@@ -254,7 +254,7 @@
               Polite reader (no interruptions)
             </label>
             <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1">
+              <input name="check" type="checkbox" tabindex="-1" id="politeToggle">
               <span class="slider round"></span>
             </label>
           </div>
@@ -264,7 +264,7 @@
             </label>
 
             <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1">
+              <input name="check" type="checkbox" tabindex="-1" id="readAllToggle">
               <span class="slider round"></span>
             </label>
           </div>
