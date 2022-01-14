@@ -431,11 +431,3 @@ const toggleSortIcon = (index, direction) => {
     }
 
 }// end of toggleSortIcon(i, dir)
-
-
-function onlyOne(checkbox) {
-    var checkboxes = document.getElementsByName('check')
-    checkboxes.forEach((item) => {
-        if (item !== checkbox) item.checked = false
-    })
-}
