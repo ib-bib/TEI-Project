@@ -6,4 +6,4 @@ This course focuses on basic HTML, CSS, JavaScript, and PHP as introductory tech
 
 This repository hosts the combined work of myself and two fellow classmates, where we kept the course's main outlines in mind and did our best to implement them in some way or another.
 
-We would like to extend a special thank you to [@ForEvolve] (https://github.com/ForEvolve) and all those who contributed to the [@ForEvolve/bootstrap-dark] (https://github.com/ForEvolve/bootstrap-dark) repository, as it was a central tenant of our project.
+We would like to extend a special thank you to [@ForEvolve](https://github.com/ForEvolve) and all those who contributed to the [@ForEvolve/bootstrap-dark](https://github.com/ForEvolve/bootstrap-dark) repository, as it was a central tenant of our project.
