@@ -46,7 +46,7 @@ if (onStatsPage()) {
 // Below section is for cookie handling
 const setCookie = (cName, cValue, cExp) => {
     const today = new Date();
-    today.setTime( today.getTime() + (cExp*24*60*60) );
+    today.setTime(today.getTime() + (cExp * 24 * 60 * 60));
     let expires = "expires=" + today.toUTCString();
     document.cookie = cName + "=" + cValue + ";" + expires + "SameSite=Lax; Secure";
 }
@@ -87,7 +87,7 @@ let enDark = () => {
         for (let i = 0; i < sortIcons.length; i++) {
             if (sortIcons[i].getAttribute("src") === "./icons/icons8-sort-32.png") {
                 sortIcons[i].src = "./icons/icons8-sort-32-white.png";
-            } 
+            }
             else if (sortIcons[i].getAttribute("src") === "./icons/sort-up-32.png") {
                 sortIcons[i].src = "./icons/sort-up-32-white.png";
             }
@@ -388,7 +388,7 @@ const sortTable = (n, numeric) => {
         if (shouldSwitch) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
-            switchcount++;    
+            switchcount++;
         } else {
             if (switchcount == 0 && direction == "ascending") {
                 direction = "descending";
@@ -431,3 +431,11 @@ const toggleSortIcon = (index, direction) => {
     }
 
 }// end of toggleSortIcon(i, dir)
+
+
+function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('check')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}

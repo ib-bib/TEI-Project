@@ -15,8 +15,9 @@
 
 <body class="bootstrap">
   <nav class="navbar navbar-expand-lg navbar-themed" aria-hidden="true">
-    <a class="navbar-brand" href="./index.html" tabindex="-1"> <img src="./icons/COVID-19icon.png" style="width: 65px; height: 65px;"> </a>
-      <h1>COVID-19 Informer</h1>
+    <a class="navbar-brand" href="./index.html" tabindex="-1"> <img src="./icons/COVID-19icon.png"
+        style="width: 65px; height: 65px;"> </a>
+    <h1>COVID-19 Informer</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,24 +27,29 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="navbar-brand" href="#" tabindex="-1">
-            <img src="./icons/moon.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon" tabindex="0" id="toggleDark">
+            <img src="./icons/moon.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+              tabindex="0" id="toggleDark">
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand" href="./index.html" tabindex="-1">
-            <img src="./icons/home-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon" tabindex="0" id="home" alt="return to home page">
+            <img src="./icons/home-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+              tabindex="0" id="home" alt="return to home page">
           </a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand" href="#" tabindex="-1">
-            <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon" tabindex="0" id="ttsBtn">
+            <button type="button" class="btn" data-toggle="modal" data-target="#myModal">
+              <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+                tabindex="0" id="ttsBtn" alt="Text To Speech">
+            </button>
           </a>
         </li>
         <li>
           <a class="navbar-brand" href="./contact.html" tabindex="-1">
-            <img src="./icons/icons8-contact-us-100(1).png" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
-              tabindex="0" id="contact" alt="Contact us">
+            <img src="./icons/icons8-contact-us-100(1).png" style="width: 43px;height: 43px; margin-left: 50px;"
+              class="navIcon" tabindex="0" id="contact" alt="Contact us">
           </a>
         </li>
       </ul>
@@ -68,19 +74,24 @@
       <thead>
         <tr class="table">
           <th tabindex="-1" scope="col">Country
-            <img tabindex="-1" onclick="sortTable(0, false)" class="sorting" style="margin-left: 180px;" src="./icons/icons8-sort-32.png"/>
+            <img tabindex="-1" onclick="sortTable(0, false)" class="sorting" style="margin-left: 180px;"
+              src="./icons/icons8-sort-32.png" />
           </th>
-          <th tabindex="-1" scope="col">Infected 
-            <img tabindex="-1" onclick="sortTable(1, true)" class="sorting" style="margin-left: 180px;" src="./icons/icons8-sort-32.png"/>
+          <th tabindex="-1" scope="col">Infected
+            <img tabindex="-1" onclick="sortTable(1, true)" class="sorting" style="margin-left: 180px;"
+              src="./icons/icons8-sort-32.png" />
           </th>
-          <th tabindex="-1" scope="col">Tested 
-            <img tabindex="-1" onclick="sortTable(2, true)" class="sorting" style="margin-left: 190px;" src="./icons/icons8-sort-32.png"/>
+          <th tabindex="-1" scope="col">Tested
+            <img tabindex="-1" onclick="sortTable(2, true)" class="sorting" style="margin-left: 190px;"
+              src="./icons/icons8-sort-32.png" />
           </th>
-          <th tabindex="-1" scope="col">Recovered 
-            <img tabindex="-1" onclick="sortTable(3, true)" class="sorting" style="margin-left: 160px;" src="./icons/icons8-sort-32.png"/>
+          <th tabindex="-1" scope="col">Recovered
+            <img tabindex="-1" onclick="sortTable(3, true)" class="sorting" style="margin-left: 160px;"
+              src="./icons/icons8-sort-32.png" />
           </th>
-          <th tabindex="-1" scope="col">Deceased 
-            <img tabindex="-1" onclick="sortTable(4, true)" class="sorting" style="margin-left: 170px;" src="./icons/icons8-sort-32.png"/>
+          <th tabindex="-1" scope="col">Deceased
+            <img tabindex="-1" onclick="sortTable(4, true)" class="sorting" style="margin-left: 170px;"
+              src="./icons/icons8-sort-32.png" />
           </th>
         </tr>
       </thead>
@@ -109,7 +120,8 @@
           </a>
         </p>
         <p>
-          <a href="https://commons.wikimedia.org/wiki/Category:SVG_files" target="_blank" title="Wikipedia SVG files" tabindex="0">
+          <a href="https://commons.wikimedia.org/wiki/Category:SVG_files" target="_blank" title="Wikipedia SVG files"
+            tabindex="0">
             <img src="./icons/icons8-wikipedia.svg" alt="Wikipedia SVG files" id="wikiLogo">
           </a>
         </p>
@@ -130,7 +142,8 @@
           Talal Nasr-Aldeen
         </p>
         <p>
-          <a href="https://github.com/ib-bib" target="_blank" title="Ibrahim" style="text-decoration: none" tabindex="0">
+          <a href="https://github.com/ib-bib" target="_blank" title="Ibrahim" style="text-decoration: none"
+            tabindex="0">
             <img src="./icons/icons8-github.svg" alt="Ibrahim Github profile" class="gitHubLogo">
           </a>
           Ibrahim Adil
@@ -157,6 +170,65 @@
     </section>
 
   </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Header</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+          <div class="form-check">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
+              red dot, hairball run catnip eat the grass sniff.
+            </label>
+            <label class="switch">
+              <input name="check" onclick="onlyOne(this)" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
+              red dot, hairball run catnip eat the grass sniff.
+            </label>
+
+
+
+            <label class="switch">
+              <input name="check" onclick="onlyOne(this)" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+
+
+          </div>
+          <div class="form-check">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
+              red dot, hairball run catnip eat the grass sniff.
+            </label>
+
+            <label class="switch">
+              <input name="check" onclick="onlyOne(this)" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -183,7 +255,7 @@
 
     axios.get("https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true")
       .then(response => {
-        let covid_data = response.data.sort((a,b) => (a.country < b.country)) 
+        let covid_data = response.data.sort((a, b) => (a.country < b.country))
         write_data(covid_data);
       })
   </script>
