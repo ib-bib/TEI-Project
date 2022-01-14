@@ -15,8 +15,9 @@
 
 <body class="bootstrap">
   <nav class="navbar navbar-expand-lg navbar-themed" aria-hidden="true">
-    <a class="navbar-brand" href="./index.html" tabindex="-1"> <img src="./icons/COVID-19icon.png"
-        style="width: 65px; height: 65px;"> </a>
+    <a class="navbar-brand" href="./index.html" tabindex="-1">
+      <img src="./icons/COVID-19icon.png" id="daRona">
+    </a>
     <h1>COVID-19 Informer</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,11 +40,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="#" tabindex="-1">
-            <button type="button" class="btn" data-toggle="modal" data-target="#myModal">
-              <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
-                tabindex="0" id="ttsBtn" alt="Text To Speech">
-            </button>
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal">
+            <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+              tabindex="0" id="ttsBtn" alt="Text To Speech">
           </a>
         </li>
         <li>
@@ -159,10 +158,16 @@
           </a>
           Google Maps Embed API
         </p>
-        <p>
+        <!-- <p>
           <a href="https://rapidapi.com/" target="_blank" title="Rapid API" tabindex="0">
             <img src="https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg" alt="Rapid API"
               id="rapidAPI">
+          </a>
+        </p> -->
+        <p>
+          <a href="https://axios-http.com" target="_blank" title="Axios API">
+            <img id="axios" src="https://axios-http.com/assets/logo.svg"
+              alt="Axios API">
           </a>
         </p>
       </h5>
