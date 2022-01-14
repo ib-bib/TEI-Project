@@ -16,7 +16,7 @@
 <body class="bootstrap">
   <nav class="navbar sticky-top navbar-expand-lg navbar-themed" aria-hidden="false">
     <a class="navbar-brand" href="./index.html" tabindex="-1">
-      <img src="./icons/COVID-19icon.png" style="width: 65px; height: 65px;">
+      <img src="./icons/COVID-19icon.png" id="daRona">
     </a>
     <h1>COVID-19 Informer</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,11 +40,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="#" tabindex="-1">
-            <button type="button" class="btn" data-toggle="modal" data-target="#myModal">
-              <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
-                tabindex="0" id="ttsBtn" alt="Text To Speech">
-            </button>
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal">
+            <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+              tabindex="0" id="ttsBtn" alt="Text To Speech">
           </a>
         </li>
         <li>
@@ -220,10 +218,16 @@
           </a>
           Google Maps Embed API
         </p>
-        <p>
+        <!-- <p>
           <a href="https://rapidapi.com/" target="_blank" title="Rapid API">
             <img id="rapidAPI" src="https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg"
               alt="Rapid API">
+          </a>
+        </p> -->
+        <p>
+          <a href="https://axios-http.com" target="_blank" title="Axios API">
+            <img id="axios" src="https://axios-http.com/assets/logo.svg"
+              alt="Axios API">
           </a>
         </p>
       </h5>
@@ -240,47 +244,33 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Modal Header</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" tabindex="-1">&times;</button>
 
         </div>
         <div class="modal-body">
           <p>Some text in the modal.</p>
           <div class="form-check">
             <label class="form-check-label" for="flexRadioDefault1">
-              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
-              red dot, hairball run catnip eat the grass sniff.
+              Polite reader (no interruptions)
             </label>
             <label class="switch">
-              <input name="check" onclick="onlyOne(this)" type="checkbox">
+              <input name="check" onclick="onlyOne(this)" type="checkbox" tabindex="-1">
               <span class="slider round"></span>
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label" for="flexRadioDefault2">
-              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
-              red dot, hairball run catnip eat the grass sniff.
+              Read entire page (includes miscellaneous content)
             </label>
 
             <label class="switch">
-              <input name="check" onclick="onlyOne(this)" type="checkbox">
+              <input name="check" onclick="onlyOne(this)" type="checkbox" tabindex="-1">
               <span class="slider round"></span>
             </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label" for="flexRadioDefault3">
-              Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the
-              red dot, hairball run catnip eat the grass sniff.
-            </label>
-
-            <label class="switch">
-              <input name="check" onclick="onlyOne(this)" type="checkbox">
-              <span class="slider round"></span>
-            </label>
-
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="-1">Close</button>
         </div>
       </div>
 

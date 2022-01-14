@@ -9,7 +9,7 @@ let contactBtn;
 const icons8Logo = document.getElementById("icons8Logo");
 let gitHubLogo = document.getElementsByClassName("gitHubLogo");
 const wikiLogo = document.getElementById("wikiLogo");
-const rapidAPIlogo = document.getElementById("rapidAPI");
+// const rapidAPIlogo = document.getElementById("rapidAPI");
 const footer = document.getElementById("footerSection");
 // Footer content
 
@@ -156,11 +156,11 @@ let enDark = () => {
         icons8Logo.src = "./icons/icons8-icons8.svg";
     }
 
-    if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
-        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
-    } else {
-        rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
-    }
+    // if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
+    //     rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
+    // } else {
+    //     rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
+    // }
 
     if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
         wikiLogo.src = "./icons/icons8-wikipedia-light.svg";

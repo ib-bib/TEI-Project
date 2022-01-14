@@ -1,6 +1,6 @@
 <?php
 	if (!(isset($_COOKIE['admin']) && $_COOKIE['admin'] == True)) {
-		header('Location: /admin/login.html');
+		header('Location: ./admin/login.html');
 		die();
 	}
 ?>
