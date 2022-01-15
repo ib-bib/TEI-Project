@@ -18,7 +18,7 @@
     <a class="navbar-brand" href="./index.html" tabindex="-1">
       <img src="./icons/COVID-19icon.png" id="daRona">
     </a>
-    <h1>COVID-19 Tracker</h1>
+    <h1 onmouseenter="arabicize(this)">COVID-19 Tracker</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,26 +27,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="navbar-brand" href="#" tabindex="-1">
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Toggle theme">
             <img src="./icons/moon.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="toggleDark">
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="./index.html" tabindex="-1">
+          <a class="navbar-brand" href="./index.html" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Home Page">
             <img src="./icons/home-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="home" alt="return to home page">
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal">
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal" title="Accessability">
             <img src="./icons/accessLight.png" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="accessBtn" alt="Accessability">
           </a>
         </li>
         <li>
-          <a class="navbar-brand" href="./contact.html" tabindex="-1">
+          <a class="navbar-brand" href="./contact.html" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Contact us">
             <img src="./icons/icons8-contact-us-100(1).png" style="width: 43px;height: 43px; margin-left: 50px;"
               class="navIcon" tabindex="0" id="contact" alt="Contact us">
           </a>
@@ -54,7 +57,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Countries..." aria-label="Search"
-               onkeyup="filterTable()" id="sfInput">
+          onkeyup="filterTable()" id="sfInput">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
           <img src="./icons/neoDarkSearch.svg" style="width: 30px;height: 30px;" id="searchBtn">
         </button>
