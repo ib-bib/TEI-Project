@@ -61,8 +61,14 @@
 
   <div class="container py-4" style="width: 50vw">
 
-    <div class="alert alert-dismissible fade show" role="alert" hidden>
-      <label></label>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" hidden>
+      <label>Email sent successfully</label>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+      <label>Email was not sent!!</label>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -217,16 +223,7 @@
       e.preventDefault();
       let data = { name: contactForm.name.value, email: contactForm.email.value, message: contactForm.message.value };
       let result = await (() => axios.post('./mail/send.php', data).then(response => response.data))();
-      let alertdiv = document.querySelector('.alert');
-      if (result) {
-        if (alertdiv.classList.contains('alert-danger')) { alertdiv.classList.remove('alert-danger') };
-        alertdiv.classList.add('alert-success');
-        alertdiv.textContent = "Email sent successfully";
-      } else {
-        if (alertdiv.classList.contains('alert-success')) { alertdiv.classList.remove('alert-success') };
-        alertdiv.classList.add('alert-danger');
-        alertdiv.textContent = "Email was not send!!";
-      }
+      let alertdiv = (result.status) ? document.querySelector('.alert-success') : document.querySelector('.alert-danger');
       alertdiv.hidden = false;
       setTimeout(() => { alertdiv.hidden = true }, 3000);
     }

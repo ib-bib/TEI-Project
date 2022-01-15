@@ -34,8 +34,14 @@
 		<label>Administrator Page</label><br>
 		<label>Email Management System</label>
 		<hr />
-		<div class="alert alert-dismissible fade show cont" role="alert" hidden>
-	      <label></label>
+		<div class="alert alert-success alert-dismissible fade show cont" role="alert" hidden>
+	      <label>Email deleted successfully</label>
+	      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	        <span aria-hidden="true">&times;</span>
+	      </button>
+	    </div>
+		<div class="alert alert-danger alert-dismissible fade show cont" role="alert" hidden>
+	      <label>Email was not deleted!!</label>
 	      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	        <span aria-hidden="true">&times;</span>
 	      </button>
@@ -53,17 +59,8 @@
 		const delete_email = async (e) => {
 			let eid = e.parentNode.getAttribute('emailid');
 			let result = await (() => axios.post('/mail/delete.php', {id: eid}).then(response => response.data))();
-			let alertdiv = document.querySelector('.alert');
-			if (result.status) {
-              if(alertdiv.classList.contains('alert-danger')) { alertdiv.classList.remove('alert-danger') };
-              alertdiv.classList.add('alert-success');
-              e.parentNode.parentNode.removeChild(e.parentNode);
-              alertdiv.textContent = "Email deleted successfully";
-            } else {
-              if(alertdiv.classList.contains('alert-success')) { alertdiv.classList.remove('alert-success') };
-              alertdiv.classList.add('alert-danger');
-              alertdiv.textContent = "Email was not deleted!!";
-            }
+			let alertdiv = (result.status) ? document.querySelector('.alert-success') : document.querySelector('.alert-danger');
+			if (result.status) {e.parentNode.parentNode.removeChild(e.parentNode);}
             alertdiv.hidden = false;
             setTimeout(() => {alertdiv.hidden = true}, 3000);
 		}

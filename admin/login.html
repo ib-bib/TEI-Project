@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Signin Template · Bootstrap</title>
+    <title>Administrator Login</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -34,13 +34,19 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="./signin.css" rel="stylesheet">
+    <link href="./login.css" rel="stylesheet">
   </head>
   <body class="text-center">
     <form name="loginForm" class="form-signin">
       <img class="mb-4" src="../icons/COVID-19icon.png" alt="" width="72" height="72">
-      <div class="alert alert-dismissible fade show" role="alert" hidden>
-        <label></label>
+      <div class="alert alert-success alert-dismissible fade show" role="alert" hidden>
+        <label>Logged in successfully</label>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+        <label>Login Failed!!</label>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -58,17 +64,7 @@
         e.preventDefault();
         let data = {user: loginForm.username.value, pass: loginForm.password.value};
         let result = await (() => axios.post('/admin/login.php', data).then(response => response.data))();
-        console.log(data);
-        let alertdiv = document.querySelector('.alert');
-        if (result.logged) {
-          if(alertdiv.classList.contains('alert-danger')) { alertdiv.classList.remove('alert-danger') };
-          alertdiv.classList.add('alert-success');
-          alertdiv.textContent = "Logged in successfully";
-        } else {
-          if(alertdiv.classList.contains('alert-success')) { alertdiv.classList.remove('alert-success') };
-          alertdiv.classList.add('alert-danger');
-          alertdiv.textContent = "Login failed!!";
-        }
+        let alertdiv = (result.logged) ? document.querySelector('.alert-success') : document.querySelector('.alert-danger');
         alertdiv.hidden = false;
         setTimeout(() => {alertdiv.hidden = true; if(result.logged){window.location.replace("/admin/");}}, 3000);
       }
