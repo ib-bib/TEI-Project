@@ -20,7 +20,7 @@
     <a class="navbar-brand" href="./index.html" tabindex="-1">
       <img src="./icons/COVID-19icon.png" id="daRona">
     </a>
-    <h1>COVID-19 Informer</h1>
+    <h1 onmouseenter="arabicize(this)">COVID-19 Informer</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation bar">
       <span class="navbar-toggler-icon"></span>
@@ -29,26 +29,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="navbar-brand" href="#" tabindex="-1">
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Toggle theme">
             <img src="./icons/moon.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="toggleDark" alt="Toggle dark mode">
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="./statistics.html" tabindex="-1">
+          <a class="navbar-brand" href="./statistics.html" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Statistics">
             <img src="./icons/stats-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="stats" alt="get COVID stats">
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal">
+          <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal" title="Accessability">
             <img src="./icons/accessLight.png" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="accessBtn" alt="Accessability">
           </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="./index.html" tabindex="-1">
+          <a class="navbar-brand" href="./index.html" tabindex="-1" data-toggle="tooltip" data-placement="bottom"
+            title="Home Page">
             <img src="./icons/home-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
               tabindex="0" id="home" alt="return to home page">
           </a>
@@ -61,31 +64,25 @@
 
   <div class="container py-4" style="width: 50vw">
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert" hidden>
-      <label>Email sent successfully</label>
+    <div class="alert alert-dismissible fade show" role="alert" hidden>
+      <label></label>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
-      <label>Email was not sent!!</label>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <!-- Bootstrap 5 starter form -->
+
     <form id="contactForm" name="contactForm" action="./mail/send.php">
 
       <!-- Name input -->
       <div class="mb-3">
         <label class="form-label" for="name">Name</label>
-        <input class="form-control" name="name" id="name" type="text" placeholder="Name" />
+        <input class="form-control" name="name" id="name" type="text" placeholder="Name" required/>
       </div>
 
       <!-- Email address input -->
       <div class="mb-3">
         <label class="form-label" for="emailAddress">Email Address</label>
-        <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" />
+        <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" required/>
       </div>
 
       <!-- Message input -->
@@ -189,27 +186,6 @@
           <p>Search and sort data on stats page</p>
           <p>Tabindexing: allow users to navigate website without a mouse</p>
           <p>Dark mode theme toggle option</p>
-
-          <!-- <div class="form-check">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Polite reader (no interruptions)
-            </label>
-            <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1" id="politeToggle">
-              <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label" for="flexRadioDefault2">
-              Read entire page (includes miscellaneous content)
-            </label>
-
-            <label class="switch">
-              <input name="check" type="checkbox" tabindex="-1" id="readAllToggle">
-              <span class="slider round"></span>
-            </label>
-          </div> -->
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" tabindex="-1">Close</button>
