@@ -11,6 +11,11 @@
 		$email = $data->email;
 		$message = $data->message;
 
+		if(empty($name) || empty($email) || empty($message)) {
+			echo json_encode(array('status'=>false));
+			die();
+		}
+
 		$sql = "INSERT INTO mail (name, email, message) VALUES ('$name', '$email', '$message')";
 		
 		$db = new Database();
