@@ -43,8 +43,8 @@
         </li>
         <li class="nav-item">
           <a class="navbar-brand" href="#" tabindex="-1" data-toggle="modal" data-target="#myModal">
-              <img src="./icons/mic-dark.svg" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
-                tabindex="0" id="ttsBtn" alt="Text To Speech">
+            <img src="./icons/accessLight.png" style="width: 43px;height: 43px; margin-left: 50px;" class="navIcon"
+              tabindex="0" id="accessBtn" alt="Accessability">
           </a>
         </li>
         <li class="nav-item">
@@ -168,17 +168,23 @@
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">TTS Features</h4>
+          <h4 class="modal-title">Accessability</h4>
           <button type="button" class="close" data-dismiss="modal" tabindex="-1">&times;</button>
-
         </div>
         <div class="modal-body">
-          <p>Select all you wish to apply</p>
-          <div class="form-check">
+          <p>ARIA Attributes</p>
+          <ul>
+            <li>ARIA-Hidden content: for anything that would waste the time of a user with a screen reader</li>
+            <li>ARIA-Live: a polite, uninterrupted setting for content that could be useful to a user with a screen reader</li>
+          </ul>
+          <p>Search and sort data on stats page</p>
+          <p>Tabindexing: allow users to navigate website without a mouse</p>
+          <p>Dark mode theme toggle option</p>
+
+          <!-- <div class="form-check">
             <label class="form-check-label" for="flexRadioDefault1">
               Polite reader (no interruptions)
             </label>
@@ -196,13 +202,13 @@
               <input name="check" type="checkbox" tabindex="-1" id="readAllToggle">
               <span class="slider round"></span>
             </label>
-          </div>
+          </div> -->
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="-1">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" tabindex="-1">Close</button>
         </div>
       </div>
-
     </div>
   </div>
 
