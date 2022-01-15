@@ -432,6 +432,25 @@ const toggleSortIcon = (index, direction) => {
 
 }// end of toggleSortIcon(i, dir)
 
+const filterTable = () => {
+    let input, filter, table, tableRows, tableData, i, txtValue;
+    input = document.getElementById('sfInput');
+    filter = input.value.toUpperCase();
+    table = document.getElementById('statsTable');
+    tableRows = table.getElementsByTagName('tr');
+
+    for (i = 0; i < tableRows.length; i++) {
+        tableData = tableRows[i].getElementsByTagName('td')[0];
+        if (tableData) {
+            txtValue = tableData.textContent || tableData.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tableRows[i].style.display = "";
+            } else {
+                tableRows[i].style.display = "none";
+            }
+        }
+    }
+}// end of function
 
 // let politeToggle = document.getElementById('politeToggle');
 // politeToggle.onclick = () => {
