@@ -156,12 +156,6 @@ let enDark = () => {
         icons8Logo.src = "./icons/icons8-icons8.svg";
     }
 
-    // if (rapidAPIlogo.getAttribute("src") === "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg") {
-    //     rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2020/07/rapid-api-logo-white.svg";
-    // } else {
-    //     rapidAPIlogo.src = "https://rapidapi.com/wp-content/uploads/2021/07/Brand-blue-horizontal.svg";
-    // }
-
     if (wikiLogo.getAttribute("src") === "./icons/icons8-wikipedia.svg") {
         wikiLogo.src = "./icons/icons8-wikipedia-light.svg";
     } else {
@@ -339,6 +333,14 @@ if (isHome() || onStatsPage()) {
 }
 // Contact us button
 
+const arabicize = x => {
+    if (x.innerHTML === "COVID-19 Informer") {
+        x.innerHTML = "مخبر فيروس كورونا";
+    } else {
+        x.innerHTML = "COVID-19 Informer";
+    }
+}
+
 const sortTable = (n, numeric) => {
     let rows, i, cellA, cellB, shouldSwitch;
     let switchcount = 0;
@@ -451,47 +453,3 @@ const filterTable = () => {
         }
     }
 }// end of function
-
-// let politeToggle = document.getElementById('politeToggle');
-// politeToggle.onclick = () => {
-//     if (politeToggle.checked) {
-//         document.getElementById('daNavBar').ariaLive = "polite";
-//         document.getElementById('daFoot').ariaLive = "polite";
-//         if (isHome()) {
-//             document.getElementById('COVIDinfoSection').ariaLive = "polite";
-//         }
-//         if (onStatsPage()) {
-//             document.getElementById('statsTable').ariaLive = "polite";
-//         }
-//     } else {
-//         document.getElementById('daNavBar').ariaLive = "off";
-//         document.getElementById('daFoot').ariaLive = "off";
-//         if (isHome()) {
-//             document.getElementById('COVIDinfoSection').ariaLive = "off";
-//         }
-//         if (onStatsPage()) {
-//             document.getElementById('statsTable').ariaLive = "off";
-//         }
-//     }
-// }
-
-// let readAllToggle = document.getElementById('readAllToggle');
-// readAllToggle.onclick = () => {
-//     if (readAllToggle.checked) {
-//         document.getElementById('daFoot').ariaHidden = "false";
-//         if (isHome()) {
-//             document.getElementById('COVIDinfoSection').ariaHidden = "false";
-//         }
-//         if (onStatsPage()) {
-//             document.getElementById('statsTable').ariaHidden = "false";
-//         }
-//     } else {
-//         document.getElementById('daFoot').ariaHidden = "true";
-//         if (isHome()) {
-//             document.getElementById('COVIDinfoSection').ariaHidden = "true";
-//         }
-//         if (onStatsPage()) {
-//             document.getElementById('statsTable').ariaHidden = "true";
-//         }
-//     }
-// }// toggle unveiling of default hidden content for screen readers
