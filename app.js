@@ -1,6 +1,6 @@
 const darkToggle = document.getElementById("toggleDark");
 let statsBtn;
-const ttsBtn = document.getElementById("ttsBtn");
+const accessBtn = document.getElementById("accessBtn");
 let searchBtn;
 let homeBtn;
 let contactBtn;
@@ -128,10 +128,10 @@ let enDark = () => {
         }
     }
 
-    if (ttsBtn.getAttribute("src") === "./icons/mic-dark.svg") {
-        ttsBtn.src = "./icons/mic-light.svg";
+    if (accessBtn.getAttribute("src") === "./icons/accessLight.png") {
+        accessBtn.src = "./icons/accessDark.png";
     } else {
-        ttsBtn.src = "./icons/mic-dark.svg";
+        accessBtn.src = "./icons/accessLight.png";
     }
 
     if (isHome() || onStatsPage()) {
@@ -230,10 +230,10 @@ if (isHome() || onContactPage()) {
     });
 }
 
-ttsBtn.addEventListener("keyup", ev => {
+accessBtn.addEventListener("keyup", ev => {
     if (ev.key === " " || ev.key === "Enter") {
         ev.preventDefault();
-        ttsBtn.click();
+        accessBtn.click();
     }
 });
 
@@ -307,18 +307,18 @@ if (onContactPage() || onStatsPage() || onSubmitPage()) {
 }
 // Stats button and Home button
 
-ttsBtn.onfocus = ttsBtn.onmouseover = () => {
-    if (ttsBtn.classList.toString() === "navIcon") {
-        ttsBtn.style.border = "2px solid black";
-        ttsBtn.style.padding = "2px";
+accessBtn.onfocus = accessBtn.onmouseover = () => {
+    if (accessBtn.classList.toString() === "navIcon") {
+        accessBtn.style.border = "2px solid black";
+        accessBtn.style.padding = "2px";
     } else {
-        ttsBtn.style.border = "2px solid white";
-        ttsBtn.style.padding = "2px";
+        accessBtn.style.border = "2px solid white";
+        accessBtn.style.padding = "2px";
     }
 }
-ttsBtn.onblur = ttsBtn.onmouseleave = () => {
-    ttsBtn.style.border = "0px solid transparent";
-    ttsBtn.style.padding = "0px";
+accessBtn.onblur = accessBtn.onmouseleave = () => {
+    accessBtn.style.border = "0px solid transparent";
+    accessBtn.style.padding = "0px";
 }
 // TTS button
 
@@ -433,46 +433,46 @@ const toggleSortIcon = (index, direction) => {
 }// end of toggleSortIcon(i, dir)
 
 
-let politeToggle = document.getElementById('politeToggle');
-politeToggle.onclick = () => {
-    if (politeToggle.checked) {
-        document.getElementById('daNavBar').ariaLive = "polite";
-        document.getElementById('daFoot').ariaLive = "polite";
-        if (isHome()) {
-            document.getElementById('COVIDinfoSection').ariaLive = "polite";
-        }
-        if (onStatsPage()) {
-            document.getElementById('statsTable').ariaLive = "polite";
-        }
-    } else {
-        document.getElementById('daNavBar').ariaLive = "off";
-        document.getElementById('daFoot').ariaLive = "off";
-        if (isHome()) {
-            document.getElementById('COVIDinfoSection').ariaLive = "off";
-        }
-        if (onStatsPage()) {
-            document.getElementById('statsTable').ariaLive = "off";
-        }
-    }
-}
+// let politeToggle = document.getElementById('politeToggle');
+// politeToggle.onclick = () => {
+//     if (politeToggle.checked) {
+//         document.getElementById('daNavBar').ariaLive = "polite";
+//         document.getElementById('daFoot').ariaLive = "polite";
+//         if (isHome()) {
+//             document.getElementById('COVIDinfoSection').ariaLive = "polite";
+//         }
+//         if (onStatsPage()) {
+//             document.getElementById('statsTable').ariaLive = "polite";
+//         }
+//     } else {
+//         document.getElementById('daNavBar').ariaLive = "off";
+//         document.getElementById('daFoot').ariaLive = "off";
+//         if (isHome()) {
+//             document.getElementById('COVIDinfoSection').ariaLive = "off";
+//         }
+//         if (onStatsPage()) {
+//             document.getElementById('statsTable').ariaLive = "off";
+//         }
+//     }
+// }
 
-let readAllToggle = document.getElementById('readAllToggle');
-readAllToggle.onclick = () => {
-    if (readAllToggle.checked) {
-        document.getElementById('daFoot').ariaHidden = "false";
-        if (isHome()) {
-            document.getElementById('COVIDinfoSection').ariaHidden = "false";
-        }
-        if (onStatsPage()) {
-            document.getElementById('statsTable').ariaHidden = "false";
-        }
-    } else {
-        document.getElementById('daFoot').ariaHidden = "true";
-        if (isHome()) {
-            document.getElementById('COVIDinfoSection').ariaHidden = "true";
-        }
-        if (onStatsPage()) {
-            document.getElementById('statsTable').ariaHidden = "true";
-        }
-    }
-}// toggle unveiling of default hidden content for screen readers
+// let readAllToggle = document.getElementById('readAllToggle');
+// readAllToggle.onclick = () => {
+//     if (readAllToggle.checked) {
+//         document.getElementById('daFoot').ariaHidden = "false";
+//         if (isHome()) {
+//             document.getElementById('COVIDinfoSection').ariaHidden = "false";
+//         }
+//         if (onStatsPage()) {
+//             document.getElementById('statsTable').ariaHidden = "false";
+//         }
+//     } else {
+//         document.getElementById('daFoot').ariaHidden = "true";
+//         if (isHome()) {
+//             document.getElementById('COVIDinfoSection').ariaHidden = "true";
+//         }
+//         if (onStatsPage()) {
+//             document.getElementById('statsTable').ariaHidden = "true";
+//         }
+//     }
+// }// toggle unveiling of default hidden content for screen readers
