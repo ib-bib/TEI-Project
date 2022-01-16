@@ -64,25 +64,31 @@
 
   <div class="container py-4" style="width: 50vw">
 
-    <div class="alert alert-dismissible fade show" role="alert" hidden>
-      <label></label>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" hidden>
+      <label>Email sent successfully</label>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+      <label>Email was not sent!!</label>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- Bootstrap 5 starter form -->
     <form id="contactForm" name="contactForm" action="./mail/send.php">
 
       <!-- Name input -->
       <div class="mb-3">
         <label class="form-label" for="name">Name</label>
-        <input class="form-control" name="name" id="name" type="text" placeholder="Name" required/>
+        <input class="form-control" name="name" id="name" type="text" placeholder="Name" />
       </div>
 
       <!-- Email address input -->
       <div class="mb-3">
         <label class="form-label" for="emailAddress">Email Address</label>
-        <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" required/>
+        <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" />
       </div>
 
       <!-- Message input -->
